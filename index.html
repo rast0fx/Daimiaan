@@ -389,20 +389,15 @@
         }
 
         .project-image {
-            height: 200px;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            width: 100%;
             background: linear-gradient(135deg, var(--primary-green), var(--light-green));
             position: relative;
             overflow: hidden;
-        }
-
-        .project-image::before {
-            content: '🎮';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            opacity: 0.7;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .project-info {
@@ -830,58 +825,50 @@
         <h2 class="section-title fade-in">My Projects</h2>
         <div class="portfolio-grid">
             <div class="project-card fade-in">
-                <div class="project-image"></div>
+                <div class="project-image" style="background-image: url('https://i.postimg.cc/dVWcnWMm/Screenshot-2025-06-24-154700.webp');"></div>
                 <div class="project-info">
-                    <h3 class="project-title">TBD</h3>
-                    <p class="project-description">TBD</p>
-                </div>
-                <div class="project-overlay">
-                    <div class="project-overlay-content">
-                        <h3>TBD</h3>
-                        <p>View Project Details</p>
-                    </div>
+                    <h3 class="project-title">Main Game Menu</h3>
+                    
                 </div>
             </div>
             
             <div class="project-card fade-in">
-                <div class="project-image"></div>
+                <div class="project-image" style="background-image: url('https://i.postimg.cc/3NQsWVp7/Screenshot-2025-06-24-155120.webp');"></div>
                 <div class="project-info">
-                    <h3 class="project-title">TBD</h3>
-                    <p class="project-description">TBD</p>
-                </div>
-                <div class="project-overlay">
-                    <div class="project-overlay-content">
-                        <h3>TBD</h3>
-                        <p>View Project Details</p>
-                    </div>
+                    <h3 class="project-title">Locker System</h3>
+                    
                 </div>
             </div>
             
             <div class="project-card fade-in">
-                <div class="project-image"></div>
+                <div class="project-image" style="background-image: url('https://i.postimg.cc/wM5SN2cN/Screenshot-2025-06-24-155307.webp');"></div>
                 <div class="project-info">
-                    <h3 class="project-title">TBD</h3>
-                    <p class="project-description">TBD</p>
+                    <h3 class="project-title">Locker System</h3>
+                    
                 </div>
-                <div class="project-overlay">
-                    <div class="project-overlay-content">
-                        <h3>TBD</h3>
-                        <p>View Project Details</p>
-                    </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image" style="background-image: url('https://i.postimg.cc/TYf8x8fJ/Screenshot-2025-06-24-160134.webp');"></div>
+                <div class="project-info">
+                    <h3 class="project-title">In-game ID</h3>
+                    
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-image" style="background-image: url('https://i.postimg.cc/tC5KCrgQ/Screenshot-2025-06-24-160249.webp');"></div>
+                <div class="project-info">
+                    <h3 class="project-title">Nametag</h3>
+                    
                 </div>
             </div>
             
             <div class="project-card fade-in">
-                <div class="project-image"></div>
+                <div class="project-image" style="background-image: url('https://i.postimg.cc/XYYTZwZZ/Screenshot-2025-06-24-160816.webp');"></div>
                 <div class="project-info">
-                    <h3 class="project-title">TBD</h3>
-                    <p class="project-description">TBD</p>
-                </div>
-                <div class="project-overlay">
-                    <div class="project-overlay-content">
-                        <h3>TBD</h3>
-                        <p>View Project Details</p>
-                    </div>
+                    <h3 class="project-title">Nametag</h3>
+                    
                 </div>
             </div>
         </div>
@@ -1167,31 +1154,7 @@
         // Initialize animations
         animateFloatingElements();
 
-        // Add custom cursor effect
-        document.addEventListener('mousemove', (e) => {
-            const cursor = document.querySelector('.cursor');
-            if (!cursor) {
-                const newCursor = document.createElement('div');
-                newCursor.className = 'cursor';
-                newCursor.style.cssText = `
-                    position: fixed;
-                    width: 20px;
-                    height: 20px;
-                    background: var(--primary-green);
-                    border-radius: 50%;
-                    pointer-events: none;
-                    z-index: 9999;
-                    opacity: 0.3;
-                    transition: transform 0.1s ease;
-                    mix-blend-mode: difference;
-                `;
-                document.body.appendChild(newCursor);
-            }
-            
-            const actualCursor = document.querySelector('.cursor');
-            actualCursor.style.left = e.clientX - 10 + 'px';
-            actualCursor.style.top = e.clientY - 10 + 'px';
-        });
+       
 
         // Enhanced project card 3D effect
         document.querySelectorAll('.project-card').forEach(card => {
